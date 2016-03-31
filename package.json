@@ -1,15 +1,17 @@
 {
-  "name": "myops",
+  "name": "myopts",
   "version": "1.0.0",
-  "description": "tiny module for converting python docstrings into markdown",
+  "description": "convert python docstrings with options into markdown",
   "main": "index.js",
-  "bin": "index.js",
+  "bin": {
+    "myopts": "index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js | tap-spec"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/freeman-lab/myops.git"
+    "url": "git+https://github.com/freeman-lab/myopts.git"
   },
   "keywords": [
     "python",
@@ -20,12 +22,16 @@
   "author": "freeman-lab",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/freeman-lab/myops/issues"
+    "url": "https://github.com/freeman-lab/myopts/issues"
   },
-  "homepage": "https://github.com/freeman-lab/myops#readme",
+  "homepage": "https://github.com/freeman-lab/myopts#readme",
   "dependencies": {
     "lodash.findindex": "^4.2.1",
     "lodash.flatten": "^4.1.1",
     "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1"
   }
 }
