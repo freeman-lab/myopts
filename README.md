@@ -111,6 +111,7 @@ In either case, the following conventions are assumed:
 - all docstrings are demarcated above and below with `"""`
 - all parameters are listed under the `Parameters` heading
 - there is a `:` between a parameter name and its annotation
+- parameter annotations are comma-separated
 - each parameter has a one or many line description followed by a line break 
 
 If you write your docstrings any differently, `myopts` probably won't work! 
