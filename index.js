@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 
 var fs = require('fs')
+var chalk = require('chalk')
 var minimist = require('minimist')
 var flatten = require('lodash.flatten')
 var findindex = require('lodash.findindex')
@@ -32,7 +33,10 @@ if (argv.help) {
 
 var source = argv._[0]
 
-if (!source) throw Error('must specify a source file')
+if (!source) {
+  console.log(usage)
+  process.exit()
+}
 
 var contents = String(fs.readFileSync(source)).split('\n')
 var classname = argv.classname
@@ -55,7 +59,10 @@ if (classname) {
 var results = []
 var start, line, previous, cond1, cond2, signature, docstring, i, j, k
 
-if (ind < 0) throw Error('no content found, double check class name?')
+if (ind < 0) {
+  console.error('[' + chalk.yellow('warning') + '] ' + 'no content parsed, try a different class name?')
+  process.exit()
+}
 
 for (i = ind; i < contents.length; i++) {
   line = contents[i]
@@ -98,6 +105,11 @@ for (i = ind; i < contents.length; i++) {
       docstring: docstring
     })
   }
+}
+
+if (results.length === 0) {
+  console.log('[' + chalk.yellow('warning') + '] ' + 'no content parsed, maybe you need a class name?')
+  process.exit()
 }
 
 var final = []
