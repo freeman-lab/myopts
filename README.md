@@ -1,6 +1,6 @@
 # myopts
 
-> tiny module for converting python docstrings into markdown
+> convert python docstrings with options into markdown
 
 This module provides a command line tool for parsing a Python file and generating nice looking markdown with your function definitions. It's extremely opinionated and rigid! But also extremely easy to use. 
 
