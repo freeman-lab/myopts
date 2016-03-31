@@ -32,7 +32,7 @@ def coolfunction(parameter, option=1000):
     """
 ```
 
-And then call `myopts example.py` to get the following markdown
+And then call `myopts function.py` to get the following markdown
 
 ```markdown
 #### `coolfunction(parameter, option=1000)`
