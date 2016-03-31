@@ -1,0 +1,31 @@
+{
+  "name": "myops",
+  "version": "1.0.0",
+  "description": "tiny module for converting python docstrings into markdown",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeman-lab/myops.git"
+  },
+  "keywords": [
+    "python",
+    "markdown",
+    "docstring",
+    "documentation"
+  ],
+  "author": "freeman-lab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freeman-lab/myops/issues"
+  },
+  "homepage": "https://github.com/freeman-lab/myops#readme",
+  "dependencies": {
+    "lodash.findindex": "^4.2.1",
+    "lodash.flatten": "^4.1.1",
+    "minimist": "^1.2.0"
+  }
+}
