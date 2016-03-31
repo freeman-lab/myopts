@@ -34,7 +34,17 @@ def coolfunction(parameter, option=1000):
 
 And then call `myopts example.py` to get the following markdown
 
------------------
+```markdown
+#### `coolfunction(parameter, option=1000)`
+
+This is a docstring.
+
+- **`option`** `int, optional, default = 10`
+
+   Description of the option.
+```
+
+Which renders as
 
 #### `coolfunction(parameter, option=1000)`
 
@@ -43,8 +53,6 @@ This is a docstring.
 - **`option`** `int, optional, default = 10`
 
    Description of the option.
-
------------------
 
 ## usage
 
