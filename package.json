@@ -6,6 +6,7 @@
   "bin": {
     "myopts": "index.js"
   },
+  "preferGlobal": "true",
   "scripts": {
     "test": "node test.js | tap-spec"
   },
