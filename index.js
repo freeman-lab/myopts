@@ -11,7 +11,11 @@ var argv = minimist(process.argv.slice(2), {
     c: 'classname',
     o: 'output',
     t: 'title',
+    s: 'sort',
     h: 'help'
+  },
+  default: {
+    sort: true
   }
 })
 
@@ -23,6 +27,7 @@ options:
   --classname, -c     name of class
   --output, -o        name of output file
   --title, -t         title for result
+  --sort, -s          sort functions by name [true]
   --help, -h          show this help message
 `
 
@@ -42,6 +47,7 @@ var contents = String(fs.readFileSync(source)).split('\n')
 var classname = argv.classname
 var title = argv.title ? argv.title : (argv.classname ? argv.classname : null)
 var output = argv.output
+var sort = argv.sort === 'true'
 
 var ind, tab, indent
 if (classname) {
@@ -60,7 +66,7 @@ var results = []
 var start, line, previous, cond1, cond2, signature, docstring, i, j, k
 
 if (ind < 0) {
-  console.error('[' + chalk.yellow('warning') + '] ' + 'no content parsed, try a different class name?')
+  warning('no content parsed, try a different class name?')
   process.exit()
 }
 
@@ -72,7 +78,10 @@ for (i = ind; i < contents.length; i++) {
   if (cond1 && cond2) {
     signature = line.slice(indent * 4, line.length)
     signature = signature.slice(0, signature.length - 1)
-    if (classname) signature = signature.replace('self, ', '')
+    if (classname) {
+      signature = signature.replace('self, ', '')
+      signature = signature.replace('self', '')
+    }
     for (j = i + 2; j < contents.length; j++) {
       if (contents[j].indexOf(tab + tab + '"""') > -1) break
     }
@@ -107,8 +116,14 @@ for (i = ind; i < contents.length; i++) {
   }
 }
 
+if (sort) {
+  results = results.sort(function (a, b) { 
+    return a.signature.localeCompare(b.signature)
+  })
+}
+
 if (results.length === 0) {
-  console.log('[' + chalk.yellow('warning') + '] ' + 'no content parsed, maybe you need a class name?')
+  warning('no content parsed, maybe you need a class name?')
   process.exit()
 }
 
@@ -124,3 +139,7 @@ if (title) flattened = ['## ' + title, ''].concat(flattened)
 
 if (output) fs.writeFileSync(output, flattened.join('\n'))
 else console.log(flattened.join('\n'))
+
+function warning(msg) {
+  console.log('[' + chalk.yellow('warning') + '] ' + msg)
+}

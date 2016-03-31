@@ -59,7 +59,7 @@ This is a docstring.
 Just specify a python file, and any associated options. Markdown will be sent to stdout, or written to a file.
 
 ```
-myopts <source> -o <output> -c <classname> -t <title>
+myopts <source> -o <output> -c <classname> -t <title> -s <sort>
 ```
 
 The options are:
@@ -67,6 +67,7 @@ The options are:
 - `output` whether to write to an output file
 - `classname` if specified, will document all methods for this class
 - `title` if specified, will add a heading to the top with the given title
+- `sort` if true, will sort functions by name 
 
 ## format
 
