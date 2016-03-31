@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 var fs = require('fs')
 var minimist = require('minimist')
 var flatten = require('lodash.flatten')
@@ -51,23 +53,23 @@ if (classname) {
 }
 
 var results = []
-var start, i, j, k
+var start, line, previous, cond1, cond2, signature, docstring, i, j, k
 
 if (ind < 0) throw Error('no content found, double check class name?')
 
 for (i = ind; i < contents.length; i++) {
-  var line = contents[i]
-  var previous = (i > 0) ? contents[i - 1] : contents[i]
-  var cond1 = line.indexOf(tab + 'def') === 0
-  var cond2 = line.indexOf(tab + 'def _') === -1 && previous.indexOf(tab + '@') === -1
+  line = contents[i]
+  previous = (i > 0) ? contents[i - 1] : contents[i]
+  cond1 = line.indexOf(tab + 'def') === 0
+  cond2 = line.indexOf(tab + 'def _') === -1 && previous.indexOf(tab + '@') === -1
   if (cond1 && cond2) {
-    var signature = line.slice(indent * 4, line.length)
+    signature = line.slice(indent * 4, line.length)
     signature = signature.slice(0, signature.length - 1)
     if (classname) signature = signature.replace('self, ', '')
     for (j = i + 2; j < contents.length; j++) {
       if (contents[j].indexOf(tab + tab + '"""') > -1) break
     }
-    var docstring = contents.slice(i + 2, j)
+    docstring = contents.slice(i + 2, j)
     docstring = docstring.map(function (line) {
       return line.slice(indent * 4, line.length)
     }).filter(function (line) {
