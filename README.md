@@ -122,3 +122,7 @@ A couple simple features that'd be good to add
 - Throw errors if formatting deviates from expectation, rather than produce garbage
 
 If you want to add one of these, or if you find the intended behavior doesn't work, issues and PRs welcome!
+
+## license
+
+[MIT](MIT)
