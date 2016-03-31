@@ -1,17 +1,19 @@
-# myops
+# myopts
 
-> tiny module for converting python docstrings into markdown
+> convert python docstrings with options into markdown
 
-This module provides a command line tool for parsing a Python file and generating nice looking markdown with your function definitions. It's extremely opinionated and rigid! But also extremely easy to use. I wrote it because Sphinx, the main documentation framework for Python, is complicated, involves a lot of configuration, and exports to re-structured text. Especially for small projects, I want to write documentation in markdown and just combine it with automatically generated function APIs. This module helps you do that!
+This module provides a command line tool for parsing a Python file and generating nice looking markdown with your function definitions. It's extremely opinionated and rigid! But also extremely easy to use. 
 
-Oh and `myops` means small Sphinx.
+I wrote it because [Sphinx](http://www.sphinx-doc.org/en/stable/), the main documentation framework for Python, is complicated, involves a lot of configuration, and exports to re-structured text. Especially for small projects, I want to write documentation in markdown and just combine it with automatically generated function APIs. This module helps you do that!
+
+Why `myopts`? There's a bug called [*`Paonias myops`*](http://bugguide.net/node/view/3713/bgimage) that's also known as the small-eyed Sphinx.
 
 ## install
 
 Install the command line tool as
 
 ```
-npm install myops -g
+npm install myopts -g
 ```
 
 ## example
@@ -30,19 +32,27 @@ def coolfunction(parameter, option=1000):
     """
 ```
 
-And then call `myops example.py` to get the following markdown
+And then call `myopts function.py` to get the following markdown
 
------------------
+```markdown
+#### `coolfunction(parameter, option=1000)`
+
+This is a docstring.
+
+- **`option`** `int` `optional` `default = 10`
+
+   Description of the option.
+```
+
+Which renders as
 
 #### `coolfunction(parameter, option=1000)`
 
 This is a docstring.
 
-- **`option`** `int, optional, default = 10`
+- **`option`** `int` `optional` `default = 10`
 
    Description of the option.
-
------------------
 
 ## usage
 
@@ -109,6 +119,10 @@ If you write your docstrings any differently, `myopts` probably won't work!
 
 A couple simple features that'd be good to add
 - Support for other headings like `Returns` and `Example`
-- 
+- Throw errors if formatting deviates from expectation, rather than produce garbage
 
 If you want to add one of these, or if you find the intended behavior doesn't work, issues and PRs welcome!
+
+## license
+
+[MIT](LICENSE)
