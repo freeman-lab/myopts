@@ -5,7 +5,9 @@ def apple(self, parameter=10, another=1000):
     Parameters
     ----------
     paramter : int, optional, default = 10
-        Description of parameter
+        Description of parameter.
+        Includes multiple lines.
+        A lot of multiple lines.
 
     another : int, optional, default = 1000
         Another description.
@@ -30,7 +32,8 @@ class Animals():
         Parameters
         ----------
         paramter : int, optional, default = 10
-            Description of parameter
+            Description of parameter.
+            Includes multiple lines.
 
         another : int, optional, default = 1000
             Another description.
