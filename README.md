@@ -125,4 +125,4 @@ If you want to add one of these, or if you find the intended behavior doesn't wo
 
 ## license
 
-[MIT](MIT)
+[MIT](LICENSE)
