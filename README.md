@@ -1,17 +1,17 @@
-# myops
+# myopts
 
 > tiny module for converting python docstrings into markdown
 
 This module provides a command line tool for parsing a Python file and generating nice looking markdown with your function definitions. It's extremely opinionated and rigid! But also extremely easy to use. I wrote it because Sphinx, the main documentation framework for Python, is complicated, involves a lot of configuration, and exports to re-structured text. Especially for small projects, I want to write documentation in markdown and just combine it with automatically generated function APIs. This module helps you do that!
 
-Oh and `myops` means small Sphinx.
+Why `myopts`? There's a bug called *`Paonias myops`* also known as as small-eyed Sphinx.
 
 ## install
 
 Install the command line tool as
 
 ```
-npm install myops -g
+npm install myopts -g
 ```
 
 ## example
@@ -30,7 +30,7 @@ def coolfunction(parameter, option=1000):
     """
 ```
 
-And then call `myops example.py` to get the following markdown
+And then call `myopts example.py` to get the following markdown
 
 -----------------
 
@@ -109,6 +109,6 @@ If you write your docstrings any differently, `myopts` probably won't work!
 
 A couple simple features that'd be good to add
 - Support for other headings like `Returns` and `Example`
-- 
+- Throw errors if formatting deviates from expectation, rather than produce garbage
 
 If you want to add one of these, or if you find the intended behavior doesn't work, issues and PRs welcome!
