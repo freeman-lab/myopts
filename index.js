@@ -80,7 +80,8 @@ for (i = ind; i < contents.length; i++) {
     }).map(function (line) {
       if (line.indexOf(' : ') > -1) {
         start = line.indexOf(' : ')
-        line = '- **`' + line.slice(0, start) + '`**' + ' ' + '`' + line.slice(start + 1, line.length).split(', ').join('` `') + '`' + '\n'
+        line = '- **`' + line.slice(0, start) + '`**' + ' ' + '`' +
+          line.slice(start + 1, line.length).split(', ').join('` `') + '`' + '\n'
         line = line.replace('`: ', '`')
         return line
       } else {
