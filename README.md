@@ -4,7 +4,7 @@
 
 This module provides a command line tool for parsing a Python file and generating nice looking markdown with your function definitions. It's extremely opinionated and rigid! But also extremely easy to use. 
 
-I wrote it because [Sphinx](http://www.sphinx-doc.org/en/stable/), the main documentation framework for Python, is complicated, involves a lot of configuration, and exports to re-structured text. Especially for small projects, I want to write documentation in markdown and just combine it with automatically generated function APIs. This module helps you do that!
+I wrote it because [Sphinx](http://www.sphinx-doc.org/en/stable/), the main documentation framework for Python, is complicated, involves a lot of configuration, and exports to re-structured text. Especially for small projects, I want to write documentation in markdown and just combine it with automatically generated function and option signatures. This module helps you do that!
 
 Why `myopts`? There's a bug called [*`Paonias myops`*](http://bugguide.net/node/view/3713/bgimage) that's also known as the small-eyed Sphinx.
 
