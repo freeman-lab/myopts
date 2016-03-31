@@ -39,7 +39,7 @@ And then call `myopts function.py` to get the following markdown
 
 This is a docstring.
 
-- **`option`** `int, optional, default = 10`
+- **`option`** `int` `optional` `default = 10`
 
    Description of the option.
 ```
@@ -50,7 +50,7 @@ Which renders as
 
 This is a docstring.
 
-- **`option`** `int, optional, default = 10`
+- **`option`** `int` `optional` `default = 10`
 
    Description of the option.
 
