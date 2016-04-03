@@ -15,7 +15,7 @@ var argv = minimist(process.argv.slice(2), {
     h: 'help'
   },
   default: {
-    sort: true
+    sort: 'true'
   }
 })
 
@@ -117,7 +117,7 @@ for (i = ind; i < contents.length; i++) {
 }
 
 if (sort) {
-  results = results.sort(function (a, b) { 
+  results = results.sort(function (a, b) {
     return a.signature.localeCompare(b.signature)
   })
 }
@@ -140,6 +140,6 @@ if (title) flattened = ['## ' + title, ''].concat(flattened)
 if (output) fs.writeFileSync(output, flattened.join('\n'))
 else console.log(flattened.join('\n'))
 
-function warning(msg) {
+function warning (msg) {
   console.log('[' + chalk.yellow('warning') + '] ' + msg)
 }

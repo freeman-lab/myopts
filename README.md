@@ -1,5 +1,8 @@
 # myopts
 
+[![NPM version][npm-image]][npm-url]
+[![js-standard-style][standard-image]][standard-url]
+
 > convert python docstrings with options into markdown
 
 This module provides a command line tool for parsing a Python file and generating nice looking markdown with your function definitions. It's extremely opinionated and rigid! But also extremely easy to use. 
@@ -128,3 +131,9 @@ If you want to add one of these, or if you find the intended behavior doesn't wo
 ## license
 
 [MIT](LICENSE)
+
+[npm-image]: https://img.shields.io/badge/npm-v1.0.0-lightgray.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/myopts
+[standard-image]: https://img.shields.io/badge/code%20style-standard-lightgray.svg?style=flat-square
+[standard-url]: https://github.com/feross/standard
+
