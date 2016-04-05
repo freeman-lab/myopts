@@ -25,7 +25,6 @@ test('function', function (t) {
 
 test('class', function (t) {
   var truth = [
-    '## Animals',
     '#### `cow(parameter=10, another=1000)`',
     'Example docstring.',
     '- **`paramter`** `int` `optional` `default = 10`',

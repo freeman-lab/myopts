@@ -45,7 +45,7 @@ if (!source) {
 
 var contents = String(fs.readFileSync(source)).split('\n')
 var classname = argv.classname
-var title = argv.title ? argv.title : (argv.classname ? argv.classname : null)
+var title = argv.title ? argv.title : null
 var output = argv.output
 var sort = argv.sort === 'true'
 
